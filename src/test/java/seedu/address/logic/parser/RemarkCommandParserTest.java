@@ -41,4 +41,5 @@ public class RemarkCommandParserTest {
         // no index
         assertParseFailure(parser, PREFIX_REMARK + nonEmptyRemark, expected);
     }
+
 }

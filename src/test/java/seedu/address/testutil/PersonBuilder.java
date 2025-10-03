@@ -10,6 +10,7 @@ import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
+import seedu.address.model.person.Remark;
 
 /**
  * A utility class to help with building Person objects.
@@ -25,6 +26,7 @@ public class PersonBuilder {
     private Phone phone;
     private Email email;
     private Address address;
+    private Remark remark;
     private Set<Tag> tags;
 
     /**
@@ -35,6 +37,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
+        remark = new Remark("");
         tags = new HashSet<>();
     }
 
@@ -46,6 +49,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
+        remark = personToCopy.getRemark();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -54,6 +58,11 @@ public class PersonBuilder {
      */
     public PersonBuilder withName(String name) {
         this.name = new Name(name);
+        return this;
+    }
+
+    public PersonBuilder withRemark(String remark) {
+        this.remark = new Remark(remark);
         return this;
     }
 
@@ -90,7 +99,7 @@ public class PersonBuilder {
     }
 
     public Person build() {
-        return new Person(name, phone, email, address, tags);
+        return new Person(name, phone, email, address,remark, tags);
     }
 
 }

@@ -17,4 +17,7 @@ public abstract class Command {
      */
     public abstract CommandResult execute(Model model) throws CommandException;
 
+    public static final String MESSAGE_NOT_IMPLEMENTED_YET = "This feature is not implemented yet.";
+
+
 }

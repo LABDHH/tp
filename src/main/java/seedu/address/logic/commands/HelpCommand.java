@@ -14,6 +14,10 @@ public class HelpCommand extends Command {
 
     public static final String SHOWING_HELP_MESSAGE = "Opened help window.";
 
+    /**
+     * Executes the Help command and returns a {@code CommandResult} containing
+     * a formatted list of available sample commands and their usage examples.
+     */
     @Override
     public CommandResult execute(Model model) {
         StringBuilder sb = new StringBuilder();

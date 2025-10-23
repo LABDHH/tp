@@ -39,7 +39,7 @@ public class HelpWindow extends UiPart<Stage> {
     private WebView webView;
 
     /**
-     * Initialises Helpwindow
+     * Controller for the Help window that displays the User Guide in a scrollable WebView.
      */
     public HelpWindow(Stage root) {
         super(FXML, root);
@@ -51,7 +51,7 @@ public class HelpWindow extends UiPart<Stage> {
     }
 
     /**
-     * Shows Helpwindow
+     * Displays the Help window and centers it on the screen.
      */
     public void show() {
         getRoot().show();
@@ -139,6 +139,7 @@ public class HelpWindow extends UiPart<Stage> {
                     "<h2>Failed to load UserGuide</h2><pre>" + e.getMessage() + "</pre>");
         }
     }
+
 
     private String readUserGuideMarkdown() throws Exception {
         try (InputStream is = getClass().getResourceAsStream(CLASSPATH_MD)) {
